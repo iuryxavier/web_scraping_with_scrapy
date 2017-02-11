@@ -4,6 +4,8 @@
 
 ### Arquivo: /extra/spiders/extra_notebooks.py
 
+### Target: [www.extra.com.br](http://www.extra.com.br/Informatica/Notebook/?Filtro=C56_C57 "Loja Virtual Extra - Notebooks")
+
 ```python
 
 import scrapy
