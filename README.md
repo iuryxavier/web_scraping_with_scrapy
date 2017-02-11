@@ -9,6 +9,8 @@ $ sudo pacman -S rethinkdb
 $ rethinkdb
 ```
 
+## Browser *: [127.0.0.1:8080](http://127.0.0.1:8080)
+
 ```bash
 $ mkdir test_project
 $ cd test_project
@@ -19,8 +21,6 @@ $ cd web_scraping_with_scrapy
 $ pip install -r requirements.txt
 $ scrapy crawl extranotebooks
 ```
-
-## Browser *: [127.0.0.1:8080](http://127.0.0.1:8080)
 
 ### Target: [www.extra.com.br](http://www.extra.com.br/Informatica/Notebook/?Filtro=C56_C57 "Loja Virtual Extra - Notebooks")
 
