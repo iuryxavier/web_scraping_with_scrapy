@@ -4,7 +4,7 @@
 
 ### arquivo: /extra/pipelines.py
 
-```python3
+```python
 # -*- coding: utf-8 -*-
 
 import rethinkdb as r
