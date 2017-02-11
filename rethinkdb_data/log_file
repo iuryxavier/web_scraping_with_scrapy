@@ -13,3 +13,8 @@
 2017-02-11T11:35:03.630131783 1.054279s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
 2017-02-11T11:35:03.630137789 1.054285s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
 2017-02-11T11:35:03.630144204 1.054291s notice: Server ready, "xavier_ovx" ab30ae72-5e6e-4834-b137-52be5b3b8296
+2017-02-11T11:39:06.505223509 243.929372s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-02-11T11:39:06.525480739 243.949629s notice: Shutting down client connections...
+2017-02-11T11:39:06.525664756 243.949812s notice: All client connections closed.
+2017-02-11T11:39:06.525669224 243.949816s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-11T11:39:06.537200080 243.961348s notice: Storage engine shut down.
