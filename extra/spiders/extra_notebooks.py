@@ -10,13 +10,11 @@ class ExtraNotebooksSpider(scrapy.Spider):
             '//div[contains(@class, "lista-produto") and contains(@class, "prateleira")]'
         )
         #self.log("Master_div: {}".format(master_div.extract_first()))
-
         items = master_div.xpath(
             './/div[contains(@class, "hproduct")]'
         )
         #self.log("Item_first: {}".format(items.extract_first()))
         #self.log("number_items: {}".format(len(items)))
-
         for item in items:
             title = item.xpath(
                 './/a[contains(@class, "link") and contains(@class, "url")]/@title'
@@ -27,7 +25,6 @@ class ExtraNotebooksSpider(scrapy.Spider):
                 './/a[contains(@class, "link") and contains(@class, "url")]/@href'
             )
             #self.log("URL: {}".format(url.extract_first()))
-
             yield scrapy.Request(
                 url=url.extract_first(),
                 callback=self.parse_detail
@@ -39,34 +36,25 @@ class ExtraNotebooksSpider(scrapy.Spider):
             Colocando em dicionário o título, preço e a link
         """
         #self.log(response)
-
         item = {}
-
         price_div = response.xpath(
             '//div[contains(@class,"area-3-1-2-2")]'
         )
         #self.log(price_div.extract_first())
-
         price_i = price_div.xpath(
             './/i[contains(@class, "sale") and contains(@class, "price")]'
         )
         #self.log(price_i.extract_first())
-
         item['price'] = price_i.xpath('.//text()').extract_first()
         #self.log("price of item: {} ".format(item['price']))
-
         title_div = response.xpath('//div[contains(@class, "area-2")]')
         #self.log(title_div.extract_first())
-
         title_b = title_div.xpath(
             './/h1[contains(@class, "name") and contains(@class, "fn")]/b'
         )
         #self.log(title_b.extract_first())
-
         item['title'] = title_b.xpath('.//text()').extract_first()
         #self.log("title of item: {} ".format(item['title']))
-
         item['url'] = response.url
         #self.log("title of url: {} ".format(response.url))
-
         yield item
