@@ -120,7 +120,6 @@ class ExtraNotebooksPipeline(object):
         r.table('items').insert(item).run(self.conn)
         return item
 
-
 ```
 
 ### Arquivo: /extra/settings.py
