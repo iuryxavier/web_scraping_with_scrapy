@@ -2,9 +2,29 @@
 
 ## Desenvolvedor de Web Scraping Utilizando Scrapy
 
-### Arquivo: /extra/spiders/extra_notebooks.py
+### Arch Linux
+
+```bash
+$ sudo pacman -S rethinkdb
+$ rethinkdb
+```
+
+```bash
+$ mkdir test_project
+$ cd test_project
+$ virtualenv -p /bin/python3.6 venv
+$ source venv/bin/activate
+$ git clone https://github.com/iuryxavier/web_scraping_with_scrapy
+$ cd web_scraping_with_scrapy
+$ pip install -r requirements.txt
+$ scrapy crawl extranotebooks
+```
+
+## Browser *: [127.0.0.1:8080](http://127.0.0.1:8080)
 
 ### Target: [www.extra.com.br](http://www.extra.com.br/Informatica/Notebook/?Filtro=C56_C57 "Loja Virtual Extra - Notebooks")
+
+### Arquivo: /extra/spiders/extra_notebooks.py
 
 ```python
 

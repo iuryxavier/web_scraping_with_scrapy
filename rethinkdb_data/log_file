@@ -1,0 +1,15 @@
+2017-02-11T11:35:02.729527451 0.153677s notice: Recursively removing directory /home/iury/Documentos/tutorials/base_tutorials/Pycursos/aprenda_analise_de_dados_com_python_e_pandas/modulo_3/teste_pratico_scraping/extra/rethinkdb_data/tmp
+2017-02-11T11:35:02.810002226 0.234150s notice: Initializing directory /home/iury/Documentos/tutorials/base_tutorials/Pycursos/aprenda_analise_de_dados_com_python_e_pandas/modulo_3/teste_pratico_scraping/extra/rethinkdb_data
+2017-02-11T11:35:02.810205080 0.234353s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/home/iury/Documentos/tutorials/base_tutorials/Pycursos/aprenda_analise_de_dados_com_python_e_pandas/modulo_3/teste_pratico_scraping/extra/rethinkdb_data' did not already exist or is empty.)
+2017-02-11T11:35:02.810290036 0.234437s notice: Running rethinkdb 2.3.5 (GCC 5.4.0)...
+2017-02-11T11:35:02.817331087 0.241484s notice: Running on Linux 4.9.6-1-ARCH x86_64
+2017-02-11T11:35:02.817478782 0.241626s notice: Loading data from directory /home/iury/Documentos/tutorials/base_tutorials/Pycursos/aprenda_analise_de_dados_com_python_e_pandas/modulo_3/teste_pratico_scraping/extra/rethinkdb_data
+2017-02-11T11:35:03.626459261 1.050607s info: Automatically using cache size of 659 MB
+2017-02-11T11:35:03.627658983 1.051807s notice: Listening for intracluster connections on port 29015
+2017-02-11T11:35:03.629830960 1.053978s notice: Listening for client driver connections on port 28015
+2017-02-11T11:35:03.630114073 1.054262s notice: Listening for administrative HTTP connections on port 8080
+2017-02-11T11:35:03.630120560 1.054267s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-11T11:35:03.630127449 1.054274s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-11T11:35:03.630131783 1.054279s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-02-11T11:35:03.630137789 1.054285s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-02-11T11:35:03.630144204 1.054291s notice: Server ready, "xavier_ovx" ab30ae72-5e6e-4834-b137-52be5b3b8296
