@@ -2,7 +2,7 @@
 
 ## Desenvolvedor de Web Scraping Utilizando Scrapy
 
-### Programa feito em 2 h ;) | <3 Python
+### Programa feito em 2 h ; )
 
 ### Referências:
   - [Docs Scrapy](https://doc.scrapy.org/en/1.3/ "Scrapy 1.3 - Docs")
