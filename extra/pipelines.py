@@ -30,7 +30,7 @@ class ExtraNotebooksPipeline(object):
             self.cursor = r.table(self.table).run(self.conn)
         except RqlRuntimeError as err:
             if err.message == "Database `testdbnosql` does not exist.":
-                print("\nCRIANDO A DATABASE E TABELA\n")
+#                print("\nCRIANDO A DATABASE E TABELA\n")
                 self.create_db_table()
             else:
                 print(err.message)

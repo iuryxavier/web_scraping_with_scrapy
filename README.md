@@ -28,14 +28,19 @@ $ scrapy crawl extranotebooks
 
 ```python
 
+# -*- coding: utf-8 -*-
+
 import scrapy
 
 class ExtraNotebooksSpider(scrapy.Spider):
 
     name = 'extranotebooks'
-    start_urls = ['http://www.extra.com.br/Informatica/Notebook/?Filtro=C56_C57']
+    start_urls = [
+        'http://www.extra.com.br/Informatica/Notebook/?Filtro=C56_C57'
+    ]
 
     def parse(self, response):
+
         master_div = response.xpath(
             '//div[contains(@class, "lista-produto") and contains(@class, "prateleira")]'
         )
@@ -48,17 +53,34 @@ class ExtraNotebooksSpider(scrapy.Spider):
             )
             url = item.xpath(
                 './/a[contains(@class, "link") and contains(@class, "url")]/@href'
-            )
+            ).extract_first()
             yield scrapy.Request(
-                url=url.extract_first(),
+                url=url,
                 callback=self.parse_detail
-                )
+            )
+
+        pagination_div = response.xpath(
+            '//div[contains(@class, "result-busca")]'
+        )
+        pagination_li = pagination_div.xpath(
+            './/li[contains(@class, "next")]'
+        )
+        next_page = pagination_li.xpath(
+            './/a/@href'
+        ).extract_first()
+
+        if next_page:
+            yield scrapy.Request(
+                url=next_page,
+                callback=self.parse
+            )
 
     def parse_detail(self, response):
         """
             Acessando a url do item: Notebook
             Colocando em dicionário o título, preço e a link
         """
+
         item = {}
         price_div = response.xpath(
             '//div[contains(@class,"area-3-1-2-2")]'
@@ -80,7 +102,6 @@ class ExtraNotebooksSpider(scrapy.Spider):
 ### Arquivo: /extra/pipelines.py
 
 ```python
-
 # -*- coding: utf-8 -*-
 
 import rethinkdb as r
@@ -88,35 +109,42 @@ from rethinkdb.errors import RqlRuntimeError
 
 class ExtraNotebooksPipeline(object):
 
+    host = 'localhost'
+    port_client = 28015
+    db = "testdbnosql"
+    table = "items"
+
     def create_db_table(self):
-        self.conn = r.connect('localhost', 28015)
+        self.conn = r.connect(self.host, self.port_client)
         try:
-            r.db_create("testdbnosql").run(self.conn)
-            r.db("testdbnosql").table_create("items").run(self.conn)
-            self.conn = r.connect(host='localhost', port=28015, db='testdbnosql')
-            self.cursor = r.table("items").run(self.conn)
+            r.db_create(self.db).run(self.conn)
+            r.db(self.db).table_create(self.table).run(self.conn)
+            self.check_db_table()
         except RqlRuntimeError as err:
             print(err.message)
 
     def check_db_table(self):
-        self.conn = r.connect(host='localhost', port=28015, db='testdbnosql')
+        self.conn = r.connect(host=self.host, port=self.port_client, db=self.db)
         try:
-            self.cursor = r.table("items").run(self.conn)
+            self.cursor = r.table(self.table).run(self.conn)
         except RqlRuntimeError as err:
             if err.message == "Database `testdbnosql` does not exist.":
-                print("CRIANDO A DATABASE E TABELA")
                 self.create_db_table()
             else:
                 print(err.message)
+
+    def drop_db_table(self,drop_db=False):
+        if drop_db:
+            r.db_drop(self.db).run(self.conn)
 
     def open_spider(self, spider):
         self.check_db_table()
 
     def close_spider(self, spider):
+        self.drop_db_table(False)
         self.conn.close()
 
     def process_item(self, item, spider):
-        print("PROCESSANDO ITEMS - DB")
         r.table('items').insert(item).run(self.conn)
         return item
 

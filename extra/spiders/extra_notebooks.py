@@ -1,11 +1,16 @@
+# -*- coding: utf-8 -*-
+
 import scrapy
 
 class ExtraNotebooksSpider(scrapy.Spider):
 
     name = 'extranotebooks'
-    start_urls = ['http://www.extra.com.br/Informatica/Notebook/?Filtro=C56_C57']
+    start_urls = [
+        'http://www.extra.com.br/Informatica/Notebook/?Filtro=C56_C57'
+    ]
 
     def parse(self, response):
+
         master_div = response.xpath(
             '//div[contains(@class, "lista-produto") and contains(@class, "prateleira")]'
         )
@@ -23,18 +28,37 @@ class ExtraNotebooksSpider(scrapy.Spider):
 
             url = item.xpath(
                 './/a[contains(@class, "link") and contains(@class, "url")]/@href'
-            )
+            ).extract_first()
             #self.log("URL: {}".format(url.extract_first()))
             yield scrapy.Request(
-                url=url.extract_first(),
+                url=url,
                 callback=self.parse_detail
-                )
+            )
+
+        pagination_div = response.xpath(
+            '//div[contains(@class, "result-busca")]'
+        )
+        pagination_li = pagination_div.xpath(
+            './/li[contains(@class, "next")]'
+        )
+        next_page = pagination_li.xpath(
+            './/a/@href'
+        ).extract_first()
+
+        self.log("\n\n{}\n\n".format(next_page))
+
+        if next_page:
+            yield scrapy.Request(
+                url=next_page,
+                callback=self.parse
+            )
 
     def parse_detail(self, response):
         """
             Acessando a url do item: Notebook
             Colocando em dicionário o título, preço e a link
         """
+        
         #self.log(response)
         item = {}
         price_div = response.xpath(
