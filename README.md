@@ -23,6 +23,17 @@ $ scrapy crawl extranotebooks
 ```
 
 ### Target: [www.extra.com.br](http://www.extra.com.br/Informatica/Notebook/?Filtro=C56_C57 "Loja Virtual Extra - Notebooks")
+#### Objetivos:
+ - Utilização de xpath nas buscas por links (Ok!)
+ - Persistência das informações (Ok!)
+    - PostgreSQL(Testado)
+    - MongoDB(Testado)
+    - RethinkDB(Testado)[Utilizado nesta Documentação](Ok!)
+ - Submissão de formulários (Em Construção)
+ - Tratamento de paginação (Ok!)
+ - Manipulação de querystrings (Em Construção)
+ - Autenticação (Em Construção)
+ - Utilizar logs para sinalizar ocorrências durante o scraping (Em Construção)
 
 ### Arquivo: /extra/spiders/extra_notebooks.py
 
@@ -247,7 +258,6 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 ```
-
 
 ### Programa feito em 3 h ; )
 
