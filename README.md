@@ -249,9 +249,9 @@ ITEM_PIPELINES = {
 ```
 
 
-### Programa feito em 2 h ; )
+### Programa feito em 3 h ; )
 
-### Estudando [4 h]
+### Estudando [7 h]
 
 ### Referências:
   - [Docs Scrapy](https://doc.scrapy.org/en/1.3/ "Scrapy 1.3 - Docs")
