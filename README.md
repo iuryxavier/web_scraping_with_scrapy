@@ -33,7 +33,7 @@ $ scrapy crawl extranotebooks
  - Autenticação (Em Construção)
  - Utilizar logs para sinalizar ocorrências durante o scraping - Estão comentadas - (Ok!)
 
-### Arquivo: /extra/spiders/extra_notebooks.py
+### Arquivo: [/extra/spiders/extra_notebooks.py](https://github.com/iuryxavier/web_scraping_with_scrapy/blob/master/extra/spiders/extra_notebooks.py)
 
 ```python
 
