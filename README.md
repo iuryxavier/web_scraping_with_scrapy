@@ -26,12 +26,12 @@ $ scrapy crawl extranotebooks
  - Persistência das informações (Ok!)
     - PostgreSQL(Testado)
     - MongoDB(Testado)
-    - RethinkDB(Testado) - Ulilizado nesta documentação - (Ok!)
+    - RethinkDB(Testado) - Utilizado nesta documentação - (Ok!)
  - Submissão de formulários (Em Construção)
  - Tratamento de paginação (Ok!)
  - Manipulação de querystrings (Em Construção)
  - Autenticação (Em Construção)
- - Utilizar logs para sinalizar ocorrências durante o scraping (Em Construção)
+ - Utilizar logs para sinalizar ocorrências durante o scraping - Estão comentadas - (Ok!)
 
 ### Arquivo: /extra/spiders/extra_notebooks.py
 
