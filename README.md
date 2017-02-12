@@ -26,7 +26,7 @@ $ scrapy crawl extranotebooks
  - Persistência das informações (Ok!)
     - PostgreSQL(Testado)
     - MongoDB(Testado)
-    - RethinkDB(Testado)[Utilizado nesta Documentação](Ok!)
+    - RethinkDB(Testado) - Ulilizado nesta documentação - (Ok!)
  - Submissão de formulários (Em Construção)
  - Tratamento de paginação (Ok!)
  - Manipulação de querystrings (Em Construção)
