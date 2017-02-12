@@ -7,7 +7,7 @@ $ sudo pacman -S rethinkdb
 $ rethinkdb
 ```
 
-## Browser *: [127.0.0.1:8080](http://127.0.0.1:8080)
+## Browser *: [127.0.0.1:8080](http://127.0.0.1:8080){:target="_blank"}
 
 ```bash
 $ mkdir test_project
@@ -20,7 +20,8 @@ $ pip install -r requirements.txt
 $ scrapy crawl extranotebooks
 ```
 
-### Target: [www.extra.com.br](http://www.extra.com.br/Informatica/Notebook/?Filtro=C56_C57 "Loja Virtual Extra - Notebooks")
+### Target: [www.extra.com.br](http://www.extra.com.br/Informatica/Notebook/?Filtro=C56_C57 "Loja Virtual Extra - Notebooks"){:target="_blank"}
+
 ### Objetivos:
  - Utilização de xpath nas buscas por links (Ok!)
  - Persistência das informações (Ok!)
@@ -33,7 +34,7 @@ $ scrapy crawl extranotebooks
  - Autenticação (Em Construção)
  - Utilizar logs para sinalizar ocorrências durante o scraping - Estão comentadas - (Ok!)
 
-### Arquivo: [/extra/spiders/extra_notebooks.py](https://github.com/iuryxavier/web_scraping_with_scrapy/blob/master/extra/spiders/extra_notebooks.py)
+### Arquivo: [/extra/spiders/extra_notebooks.py](https://github.com/iuryxavier/web_scraping_with_scrapy/blob/master/extra/spiders/extra_notebooks.py){:target="_blank"}
 
 ```python
 
@@ -108,7 +109,7 @@ class ExtraNotebooksSpider(scrapy.Spider):
 
 ```
 
-### Arquivo: [/extra/pipelines.py](https://github.com/iuryxavier/web_scraping_with_scrapy/blob/master/extra/pipelines.py)
+### Arquivo: [/extra/pipelines.py](https://github.com/iuryxavier/web_scraping_with_scrapy/blob/master/extra/pipelines.py){:target="_blank"}
 
 ```python
 
@@ -160,7 +161,7 @@ class ExtraNotebooksPipeline(object):
 
 ```
 
-### Arquivo: (/extra/settings.py)<https://github.com/iuryxavier/web_scraping_with_scrapy/blob/master/extra/settings.py>
+### Arquivo: [/extra/settings.py](https://github.com/iuryxavier/web_scraping_with_scrapy/blob/master/extra/settings.py){:target="_blank"}
 
 ```python
 
@@ -262,9 +263,9 @@ ITEM_PIPELINES = {
 ### Estudando [7 h]
 
 ### Referências:
-  - [Docs Scrapy](https://doc.scrapy.org/en/1.3/ "Scrapy 1.3 - Docs")
-  - [Parte I - Configurando e rodando o Scrapy](http://www.gilenofilho.com.br/usando-o-scrapy-e-o-rethinkdb-para-capturar-e-armazenar-dados-imobiliarios-parte-i/ "Gileno Filho Blog")
-  - [Parte II - Instalando, configurando e armazenando os dados no RethinkdbParte II - Instalando, configurando e armazenando os dados no Rethinkdb](http://www.gilenofilho.com.br/usando-o-scrapy-e-o-rethinkdb-para-capturar-e-armazenar-dados-imobiliarios-parte-ii/ "Gileno Filho Blog")
-  - [Parte III - Deploy do projeto ScrapyParte III - Deploy do projeto Scrapy](http://www.gilenofilho.com.br/usando-o-scrapy-e-o-rethinkdb-para-capturar-e-armazenar-dados-imobiliarios-parte-iii/ "Pycursos.com Gileno")
+  - [Docs Scrapy](https://doc.scrapy.org/en/1.3/ "Scrapy 1.3 - Docs"){:target="_blank"}
+  - [Parte I - Configurando e rodando o Scrapy](http://www.gilenofilho.com.br/usando-o-scrapy-e-o-rethinkdb-para-capturar-e-armazenar-dados-imobiliarios-parte-i/ "Gileno Filho Blog"){:target="_blank"}
+  - [Parte II - Instalando, configurando e armazenando os dados no RethinkdbParte II - Instalando, configurando e armazenando os dados no Rethinkdb](http://www.gilenofilho.com.br/usando-o-scrapy-e-o-rethinkdb-para-capturar-e-armazenar-dados-imobiliarios-parte-ii/ "Gileno Filho Blog"){:target="_blank"}
+  - [Parte III - Deploy do projeto ScrapyParte III - Deploy do projeto Scrapy](http://www.gilenofilho.com.br/usando-o-scrapy-e-o-rethinkdb-para-capturar-e-armazenar-dados-imobiliarios-parte-iii/ "Pycursos.com Gileno"){:target="_blank"}
   - [Aprenda Análise de Dados com Python e Pandas](https://www.pycursos.com/pandas/ "Gileno Filho Blog")
-  - [Getting started with RethinkDB and Python 3](https://rethinkdb.com/blog/chad-lung-python3/ "Rethinkdb with python3")
+  - [Getting started with RethinkDB and Python 3](https://rethinkdb.com/blog/chad-lung-python3/ "Rethinkdb with python3"){:target="_blank"}
