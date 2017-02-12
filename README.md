@@ -160,7 +160,7 @@ class ExtraNotebooksPipeline(object):
 
 ```
 
-### Arquivo: [/extra/settings.py](https://github.com/iuryxavier/web_scraping_with_scrapy/blob/master/extra/settings.py)
+### Arquivo: [/extra/settings.py]<https://github.com/iuryxavier/web_scraping_with_scrapy/blob/master/extra/settings.py>
 
 ```python
 
