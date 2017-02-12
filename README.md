@@ -1,7 +1,5 @@
 # Web Scraping with Scrapy
-
 ## Desenvolvedor de Web Scraping Utilizando Scrapy
-
 ### Arch Linux
 
 ```bash
@@ -23,7 +21,7 @@ $ scrapy crawl extranotebooks
 ```
 
 ### Target: [www.extra.com.br](http://www.extra.com.br/Informatica/Notebook/?Filtro=C56_C57 "Loja Virtual Extra - Notebooks")
-#### Objetivos:
+### Objetivos:
  - Utilização de xpath nas buscas por links (Ok!)
  - Persistência das informações (Ok!)
     - PostgreSQL(Testado)
